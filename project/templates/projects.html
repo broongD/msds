@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ML Projects</title>
+<link id='favicon' rel="icon" type="image/x-icon" href="../static/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="../static/styles.css" />
+</head>
+
+<body id="page">
+  <nav id="navbar" class="visible">
+
+      <a href="#welcome-section" id="about"><li>About</li></a>
+      <a href="#projects" id="work"><li>Work</li></a>
+      <a href="{{url_for('home')}}" id="contact-nav"><li>Home</li></a>
+
+
+
+  </nav>
+  <section id="welcome-section" class="visible">
+   <div id="top">
+     <h1 class="welcome-section">Machine Learning Projects
+    </h1>
+    <p>This is where I keep the stuff I make</p>
+     <hr>
+     <div class="animbox">
+       <div class="anim">
+       </div>
+     </div>
+
+     </div>
+
+    </div>
+
+  </section>
+  <section class="visible" id="projects">
+    <h2>Projects</h2>
+    <div> 
+        <h3>Machine Learning 1</h3>
+        <ul>
+            <a href="{{url_for('ML11')}}"><li>Johnny Likes Pie</li></a>
+            <a href="{{url_for('ML12')}}"><li>COVID-19 Data Wrangling</li></a>
+            <a href="{{url_for('ML13')}}"><li>Multiple Linear Regression</li></a>
+            <a href="{{url_for('ML14')}}"><li>Custom Transformer and Transformation Pipeline</li></a>
+            <a href="{{url_for('ML15')}}"><li>Classification System Metrics</li></a>
+            <a href="{{url_for('ML16')}}"><li>Polynomial Regression I</li></a>
+            <a  href="{{url_for('ML17')}}"><li>Polynomial Regression II</li></a>
+          </ul>  
+        <h3>Machine Learning 2</h3>
+        <ul>
+            <a href="{{url_for('ML21')}}"><li>Decision Tree Grid Search</li></a>
+            <a href="{{url_for('ML22')}}"><li>Exploring Tree-Based Regression Methods for 2D Linear Data</li></a>
+            <a href="{{url_for('ML23')}}"><li>Exploring Tree-Based Regression Methods for 3D Sinusoidal Data</li></a>
+            <a href="{{url_for('ML24')}}"><li>Matrix as a Linear Transformation</li></a>
+            <a href="{{url_for('ML25')}}"><li>Mushroom Classifier</li></a>
+            <a href="{{url_for('ML26')}}"><li>Exploring 3D Sinusoidal Data using Artificial Neural Networks</li></a>
+        </ul>     
+      </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Braedon Long: Example Technical Document</title>
+<link id='favicon' rel="icon" type="image/x-icon" href="favicon.ico"/>
+<style>
+  :root {
+    --nav-width: 18vw;
+    --color: black;
+    --background: #FCF5D9;
+    --hover-color: grey;
+    --phone-nav-height: 8vh;
+    background: #F2E8D0;
+    color: var(--color);
+    font-family: sans-serif;
+  }
+  footer {
+    position: relative;
+    bottom: -5vw;
+    background: transparent;
+    z-index: 0;
+    height: 5vh;
+    width: 80vw;
+    padding-left: 20vw;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+
+  }
+  .footer {
+    text-decoration: none;
+    padding-top: 1vh;
+    list-style-type: none;
+    flex: 1 1 20%;
+  }
+  .footer:hover {
+    padding-top: .5vh;
+  }
+  a {
+    text-decoration: none;
+    color: var(--color);
+
+  }
+  a:hover {
+   color: green;
+
+  }
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    background: var(--background);
+    text-align: center;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  nav {
+    background: var(--background)
+
+  }
+  .navbar {
+    list-style-type: none;
+    width: 85%;
+    display: block;
+    background: var(--background);
+    overflow: auto;
+    border-top: 1px solid;
+
+
+  }
+  .nav-link {
+    padding: 1vh;
+    font-size: 1.2rem;
+
+  }
+  .navbar ul {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+
+  }
+  .marker {
+    height: var{--phone-nav-height};
+    background: green;
+  }
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    nav {
+      position: absolute;
+      width: 100vw;
+      height: var(--phone-nav-height);
+      background: var(--background);
+      z-index: 2;
+
+    }
+    h2 {
+      padding-top: 3rem;
+    }
+    footer {
+      display: none;
+    }
+    .navbar {
+      display: grid;
+       grid-template-rows: 1fr;
+       grid-template-columns: repeat(auto-fit, 1fr);
+      background: var(--background);
+    }
+    .menu {
+      position: relative;
+      display: inline-block;
+      width:50vw;
+      background: var(--background);
+
+    }
+   .menu-button:hover, .menu-button:focus {
+
+      background: var(--hover-color);
+    }
+    .drop-menu {
+      display: none;
+      position: fixed;
+      top: 4rem;
+      width: 100vw;
+      background: var(--background);
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+
+    /* Dropdown Button */
+    .menu-button {
+
+      position: fixed;
+      top: 0px;
+      background: var(--background);
+      width:100vw;
+      padding: 2vh 2vw;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+  }
+
+
+  /* Links inside the dropdown */
+  .drop-menu a {
+    padding: .7rem 1rem;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+  }
+  main {
+    position: relative;
+    top: 20vh;
+  }
+  section {
+
+  }
+
+
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    nav {
+      position: fixed;
+      top: 0px;
+      left:0px;
+      bottom: 0px;
+      width: var(--nav-width);
+    }
+    main {
+      margin-left: var(--nav-width);
+      padding-left: 1rem;
+      top: 0;
+    }
+    .menu {
+      display: none;
+    }
+  }
+  section {
+    padding-top: 1rem;
+  }
+  .navbar {
+    height: 60vh;
+  }
+  .nav-link {
+  }
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+
+  }
+
+  </style>
+  </head>
+
+<body>
+  <script>
+    function menuButton() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.menu-button')) {
+        var dropdowns = document.getElementsByClassName("drop-menu");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+    <div class="page" id="visible">
+      <nav
+           class="visible"
+           id="navbar">
+        <header
+
+                id="navbar-header">
+          <h1
+              class="navbar-header"
+              id="Doc_Title">
+            Technical Topic
+          </h1>
+            </header>
+        <div class="menu">
+          <button onclick="menuButton()" class="menu-button" id="menu-button">Menu</button>
+
+          </div>
+      <div class="drop-menu" id="myDropdown">
+        <ul class="navbar" id="menu">
+          <a href="#Section_Title_1" class="nav-link">
+            <li>Section Title 1</li>
+            </a>
+          <a href="#Section_Title_2" class="nav-link">
+            <li>Section Title 2</li>
+            </a>
+          <a href="#Section_Title_3" class="nav-link">
+            <li>Section Title 3</li>
+            </a>
+          <a href="#Section_Title_4" class="nav-link">
+            <li>Section Title 4</li>
+            </a>
+          <a href="#Section_Title_5" class="nav-link">
+            <li>Section Title 5</li>
+            </a>
+          <a href="#Section_Title_6" class="nav-link">
+            <li>Section Title 6</li>
+            </a>
+          <a href="#Section_Title_7" class="nav-link">
+            <li>Section Title 7</li>
+            </a>
+          <a href="#Section_Title_8" class="nav-link">
+            <li>Section Title 8</li>
+            </a>
+          <a href="#Section_Title_9" class="nav-link">
+            <li>Section Title 9</li>
+            </a>
+          <a href="#Section_Title_10" class="nav-link">
+            <li>Section Title 10</li>
+            </a>
+        </ul>
+          </div>
+      </nav>
+
+    <main
+          class="visible"
+          id="main-doc">
+
+      <section
+               class="main-section"
+               id="Section_Title_1">
+
+        <header><div class="marker"></div>
+          <h2>
+            Section Title 1
+          </h2>
+          </header>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+    <p>
+      <code>
+        Code Stuff Yay
+      <br>
+      div
+      </code>
+      </p>
+        <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+
+          </ol>
+      </section>
+
+      <section
+               class="main-section"
+               id="Section_Title_2">
+        <header>  <div class="marker"></div>
+          <h2>
+            Section Title 2
+          </h2>
+          </header>
+        <p>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+    <p>
+      <code>
+        File not found.
+      <br>
+      run it back
+      </code>
+      </p>
+        <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+
+          </ol>
+      </section>
+
+      <section
+               class="main-section"
+               id="Section_Title_3">
+
+        <header><div class="marker"></div>
+          <h2>
+            Section Title 3
+          </h2>
+          </header>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+    <p>
+      <code>
+        nav
+      <br>
+      color
+      </code>
+      </p>
+        <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+
+          </ol>
+      </section>
+
+      <section
+               class="main-section"
+               id="Section_Title_4">
+
+        <header>  <div class="marker"></div>
+          <h2>
+            Section Title 4
+          </h2>
+          </header>
+        <p>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+    <p>
+      <code>
+        display:grid
+      <br>
+      funk
+      </code>
+      </p>
+        <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+
+          </ol>
+      </section>
+
+
+
+      <section
+               class="main-section"
+               id="Section_Title_5">
+
+        <header> <div class="marker"> </div>
+          <h2>
+            Section Title 5
+          </h2>
+          </header>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+    <p>
+      <code>
+        border: 7px groove;
+      </code>
+      </p>
+        <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+
+          </ol>
+      </section>
+
+      <section
+               class="main-section"
+               id="Section_Title_6">
+
+        <header><div class="marker"></div>
+          <h2>
+            Section Title 6
+          </h2>
+          </header>
+        <p>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    <p>
+      <code>
+       h1
+      </code>
+      </p>
+        <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+
+          </ol>
+      </section>
+
+      <section
+               class="main-section"
+               id="Section_Title_7">
+
+        <header><div class="marker"></div>
+          <h2>
+            Section Title 7
+          </h2>
+          </header>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+    <p>
+      <code>
+       p
+      </code>
+      </p>
+        <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+
+          </ol>
+      </section>
+
+      <section
+               class="main-section"
+               id="Section_Title_8">
+
+        <header><div class="marker"></div>
+          <h2>
+            Section Title 8
+          </h2>
+          </header>
+        <p>
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+    <p>
+      <code>
+        li
+      </code>
+      </p>
+        <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+
+          </ol>
+      </section>
+
+      <section
+               class="main-section"
+               id="Section_Title_9">
+
+        <header><div class="marker"></div>
+          <h2>
+            Section Title 9
+          </h2>
+          </header>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+    <p>
+      <code>
+       ul
+      </code>
+      </p>
+        <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+
+          </ol>
+      </section>
+
+      <section
+               class="main-section"
+               id="Section_Title_10">
+
+        <header><div class="marker"></div>
+          <h2>
+            Section Title 10
+          </h2>
+          </header>
+        <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+    <p>
+      <code>
+        ol
+      </code>
+      </p>
+        <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+
+          </ol>
+      </section>
+      <br><br>
+    </main>
+      </div>
+    <footer>
+          <a href="#Section_Title_1" class="footer">
+            <li>Section Title 1</li>
+            </a>
+          <a href="#Section_Title_2" class="footer">
+            <li>Section Title 2</li>
+            </a>
+          <a href="#Section_Title_3" class="footer">
+            <li>Section Title 3</li>
+            </a>
+          <a href="#Section_Title_4" class="footer">
+            <li>Section Title 4</li>
+            </a>
+          <a href="#Section_Title_5" class="footer">
+            <li>Section Title 5</li>
+            </a>
+              <a href="#Section_Title_6" class="footer">
+            <li>Section Title 6</li>
+            </a>
+          <a href="#Section_Title_7" class="footer">
+            <li>Section Title 7</li>
+            </a>
+          <a href="#Section_Title_8" class="footer">
+            <li>Section Title 8</li>
+            </a>
+          <a href="#Section_Title_9" class="footer">
+            <li>Section Title 9</li>
+            </a>
+          <a href="#Section_Title_10" class="footer">
+            <li>Section Title 10</li>
+            </a>
+            </footer>
+
+
+  </body>
+</html>

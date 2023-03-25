@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Braedon Long: Example Form</title>
+<link id='favicon' rel="icon" type="image/x-icon" href="favicon.ico"/>
+<style>
+  .page {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    color: #354596;
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "main main main"
+      "footer footer footer";
+    justify-items: center;
+    background-color: rgba(34, 115, 235, 0.92);
+    animation-name: shimmer;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    font-family: sans-serif;
+
+  }
+  @keyframes glimmer {
+    0% {
+      border-color: rgba(34, 115, 235, 0.92);
+    }
+    25% {
+      border-color: #7361EB;
+    }
+    50% {
+      border-color: #C579E0;
+    }
+    75% {
+      border-color: #7361EB;
+    }
+    100% {
+      border-color: rgba(34, 115, 235, 0.92);
+    }
+  }
+  @keyframes shimmer {
+    0% {
+      background-color: rgba(34, 115, 235, 0.92);
+    }
+    25% {
+      background-color: #7361EB;
+    }
+    50% {
+      background-color: #C579E0;
+    }
+    75% {
+      background-color: #7361EB;
+    }
+    100% {
+      background-color: rgba(34, 115, 235, 0.92);
+    }
+  }
+    .header {
+      width: 100%;
+      opacity: 85%;
+      text-align: center;
+      grid-area: header;
+      background-color: transparent;
+      margin: 2rem;
+      z-index: 1;
+      color: #FAD791;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  label {
+    font-size: 1.1rem;
+    margin: .5rem .5rem 1rem .5rem;
+  }
+  #survey-form {
+    grid-area: main;
+    justify-items: left;
+    background-color: #FAD791;
+    padding: 2rem;
+    margin: auto;
+    color: #354596;
+    border-style: double;
+    border-width: 1rem;
+    border-radius: 5rem;
+
+    border-color: rgba(34, 115, 235, 0.92);
+    animation-name: glimmer;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(90px, 1fr));
+    z-index: 2
+  }
+  #empty {
+    grid-area: empty;
+    grid-area: header;
+    grid-area: footer;
+    height: 10rem;
+    width: 1fr;
+  }
+  #nombre {
+    grid-area: 1/1/2/2;
+  }
+  #emailio {
+    grid-area: 1/2/2/3;
+  }
+  #bim {
+    grid-area: 3/1/4/3;
+    display: grid;
+  }
+  #excite {
+    grid-area: 2/1/3/2;
+  }
+  #adjective {
+    grid-area: 2/2/3/3;
+  }
+  #awesome {
+    grid-area: 4/1/5/3;
+    display: grid;
+
+  }
+  #comments {
+    grid-area: 5/1/6/3;
+    width: 100%;
+    height: 4rem;
+  }
+  #submit {
+    grid-area: 6/1/7/3;
+    margin-top: 5rem;
+    width: 80%;
+    height: 3rem;
+    color: #FAD791;
+    font-size: 1.2rem;
+    border-color: #FAD791;
+    border-radius: 1.5rem;
+    border-style: dotted;
+    justify-self: center;
+    background-color: rgba(34, 115, 235, 0.92);
+    animation-name: shimmer;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+
+  div {
+    margin: 1rem;
+  }
+  legend {
+    font-size: 1.2rem;
+    padding-top: 1rem;
+  }
+  fieldset {
+    border-color: transparent;
+  }
+  .submit:hover {
+    transform: scale(1.05);
+  }
+  .input {
+    display: block;
+    width: auto;
+    height: 1.8rem;
+    background-color: #D6E6FE;
+    color: #354596;
+    border: 2px dotted #FAD791;
+    border-radius: .5rem;
+    font-weight: 500;
+    font-family: sans-serif;
+
+  }
+  #comments {
+    width: 95%;
+    margin: auto;
+  }
+
+</style>
+</head>
+
+<div class="page">
+  <header class="header">
+    <h1 id="title" >Want to stay in touch?</h1>
+    <p id="description">
+      <em>Thanks for being as excited as we are!!</em>
+    </p>
+  </header>
+  <div id="empty"><p> </p>
+  </div>
+  <div id="sides"></div>
+<main>
+  <form id="survey-form">
+    <div id="nombre" class="form-group">
+    <label id="name-label"
+           for="name">Name:</label><br>
+    <input
+           class="input"
+           type="text"
+           id="name"
+           name="name"
+           placeholder="Jon Doe"
+           required>
+    </div><br>
+    <div id="emailio" class="form-group">
+    <label id="email-label"
+           for ="email"> Email:</label><br>
+    <input
+           class="input"
+           type="email"
+           id="email"
+           name="email"
+           placeholder="jon.doe@example.com"
+           required>
+    </div>
+        <br>
+    <div id="excite" class="form-group">
+    <label id="number-label"
+           for="number">1-10, how excited are you?</label><br>
+    <input
+           class="input"
+           type="number"
+           id="number"
+           name="number"
+           min="1"
+           max="10"
+           placeholder="10"
+           ></div>
+    <br>
+    <div id="adjective" class="form-group">
+    <label id="dropdown-label"
+           for="dropdown">Are you any of these?<span class="clue">(optional)</span></label><br>
+    <select
+           class="input"
+           id="dropdown"
+           name="adjective"
+           required>
+      <option disabled selected value>Choose most accurate...</option>
+        <option value="fig">A Fig</option>
+        <option value="elephant-brain">Autonomous Elephant Brain</option>
+        <option value="mage">Mage</option>
+        <option value="mothers-love">The Love of a Mother</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <br>
+
+     <fieldset id="bim" class="form-group">
+      <legend>Are you curious about the land of Bim?</legend>
+      <label>
+        <input
+          name="bim-curious"
+          value="no-doubt"
+          type="radio"
+          class="input-radio"
+          checked
+        >No Doubt</label>
+
+      <label>
+        <input
+          name="bim-curious"
+          value="minimal-doubt"
+          type="radio"
+          class="input-radio"
+        >Minimal Doubt</label>
+
+      <label>
+        <input
+          name="bim-curious"
+          value="reasonable-doubt"
+          type="radio"
+          class="input-radio"
+        >Reasonable Doubt</label
+      >
+       <label>
+        <input
+          name="bim-curious"
+          value="creeping-doubt"
+          type="radio"
+          class="input-radio"
+        >Creeping Doubt</label
+      >
+       <label>
+        <input
+          name="bim-curious"
+          value="extraordinary-doubt"
+          type="radio"
+          class="input-radio"
+        >Extraordinary Doubt</label
+      >
+       <label>
+        <input
+          name="bim-curious"
+          value="absolute-doubt"
+          type="radio"
+          class="input-radio"
+        >Absolute Doubt</label
+      >
+    </fieldset>
+    <br>
+
+    <fieldset id="awesome" class="form-group">
+      <legend> How many of these things are awesome?</legend>
+      <label>
+        <input
+          name="awesome"
+          value="the-night-sky"
+          type="checkbox"
+          class="input-checkbox"
+        >The Night Sky</label
+      >
+      <label>
+        <input
+          name="awesome"
+          value="turtles"
+          type="checkbox"
+          class="input-checkbox"
+        >Turtles</label
+      >
+      <label>
+        <input
+          name="awesome"
+          value="long-nails"
+          type="checkbox"
+          class="input-checkbox"
+        >Long Nails</label
+      >
+      <label>
+        <input
+          name="awesome"
+          value="small-mythical-creatures"
+          type="checkbox"
+          class="input-checkbox"
+        >Small Mythical Creatures</label
+        ></fieldset>
+    <br>
+    <div id="comments" class="form-group">
+      <label id="comments-label"
+             for="comments">Additional Comments:</label>
+      <br>
+      <textarea
+             class="input"
+             type="text"
+             id="comments"
+             placeholder="Penny for your thoughts..."
+             ></textarea>
+    </div>
+    <br>
+    <button class="submit" id="submit">Submit</button>
+  </form>
+  </main>
+  </html>

@@ -1,0 +1,103 @@
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Summarizers</title>
+    <link id='favicon' rel="icon" type="image/x-icon" href="../static/favicon.ico"/>
+    <!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="../static/styles.css" />
+  </head>
+<div class="page">
+  <body>
+
+  <nav id="navbar" class="visible">
+
+      <a href="#welcome-section" id="about"><li>Entry</li></a>
+      <a href="#projects" id="work"><li>Summaries</li></a>
+      <a href="{{url_for('home')}}" id="contact-nav"><li>Home</li></a>
+
+
+  </nav>
+
+
+    <header class="header" id="welcome-section">
+      <h1>Text Summarization</h1>
+      <div id="data-input">
+      <form action="{{url_for('Summarize')}}" method="post">
+        <textarea class="text-stuff" name="data" id="data" placeholder="Enter text to be summarized or a topic less than 50 characters... it takes a minute to load" required="required"></textarea>
+        <div>
+          <h3>Summary Length</h3>
+          <input type="range" class="m-2" min="2" max="20" name="maxL">
+          </div>
+        <div id="buttonbox">
+
+          <button type="submit" class="submit" id="submit" onclick="Check()">Submit</button>
+
+          <button type="reset" class="submit" id="submit">Clear</button>
+          </div>
+        </form>
+      </div>
+      </header>
+    <main class="main">
+    <section class="visible" id="projects">
+      <h2>Summaries</h2>
+      <div class="summaries">
+        <div>
+          <h4>Input Text</h4>
+          <textarea class="text-stuff" id="summarized-text" name="textData" readonly placeholder="Input Text">{{textDataResult}}</textarea>
+          <button type="button" onclick="myFunction()" class="copyText" id="copyText">Copy Text</button>
+          </div>
+        <div>
+          <h4>NLTK Summarizer</h4>
+          <textarea class="text-stuff" id="summarized-text" name="nltkResult" readonly placeholder="Your NLTK Summary">{{nltkResult}}</textarea>
+          <button type="button" onclick="myFunction()" class="copyText" id="copyText">Copy Text</button>
+          </div>
+        <div>
+          <h4>Facebook BART Summarizer</h4>
+          <textarea class="text-stuff" id="summarized-text" name="hugbartResult" readonly placeholder="Your BART Summary">{{hugbartResult}}</textarea>
+          <button type="button" onclick="myFunction()" class="copyText" id="copyText">Copy Text</button>
+          </div>
+        <div>
+          <h4>Extractive Summary</h4>
+          <textarea class="text-stuff" id="summarized-text" name="extactiveResult" readonly placeholder="Your Extractive Summary">{{extactiveResult}}</textarea>
+          <button type="button" onclick="myFunction()" class="copyText" id="copyText">Copy Text</button>
+          </div>
+        <div>
+          <h4>Extractive + Abstractive Summary</h4>
+          <textarea class="text-stuff" id="summarized-text" name="extabsResult" readonly placeholder="Your Extractive + Abstractive Summary">{{extabsResult}}</textarea>
+          <button type="button" onclick="myFunction()" class="copyText" id="copyText">Copy Text</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  <footer class="footer">
+    </footer>
+    </body>
+  </div>
+<script>
+      function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput");
+
+        /* Select the text field */
+        copyText.select();
+        /* for mobile devices */
+        copyText.setSelectionRange(0,99999);
+
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+      }
+      </script>
+      <script>
+        function Check() {
+
+          var reg = /<(.|\n)*>/g;
+
+          if (reg.test(document.getElementById("data").value)==true){
+            var ErrorText = "Make Sure You Provide Valid Data.";
+            alert('Error Text');
+          }
+        }
+        </script>
+</html>

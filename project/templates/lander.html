@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Braedon Long: Landing Page Example</title>
+<link id='favicon' rel="icon" type="image/x-icon" href="favicon.ico"/>
+<style>
+  :root {
+    --background-color: #FAF1C6;
+    --bar-color-1: #9AA4AD;
+    --bar-color-2: #D2E5FA;
+    --bar-color-3: #ADA478;
+    --text-color: #26251E;
+    --header-height: 10vh;
+    --header-min-height: 35px;
+    --header-max-height: 75px;
+    --header-font-size: 5vh;
+    --logo-font-size: 7vh;
+    background-color: var(--backgroundcolor);
+  }
+  .body {
+    background-color: var(--backgroundcolor);
+    color: var(--text-color);
+  }
+  .page{
+    background-color: var(--backgroundcolor);
+    color: var(--text-color);
+    display: grid;
+    grid-template-areas:
+      "."
+      "top"
+      "locations"
+      "about"
+      "pricing"
+      "footer";
+    font-family: sans-serif;
+    justify-items: center;
+    text-align: center;
+  }
+  .top-banner {
+    background-color: rgba(250, 241, 198, 1);
+    position: fixed;
+    z-index: 100;
+  }
+  header {
+    margin: auto;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+    align-items: center;
+    width: 98vw;
+    height: var(--header-height);
+    min-height: var(--header-min-height);
+    max-height: var(--header-max-height);
+    background-color: var(--bar-color-3);
+    font-size: var(--header-font-size);
+    border-color: var(--text-color);
+    border-style: solid;
+    border-width: 1vh;
+
+  }
+  @media (max-width: 600px) {
+    header {
+      grid-template-columns: 100%;
+      grid-template-rows: 1fr 1fr;
+      height: 20vh;
+      font-size: 3vh;
+    }
+    nav {
+      font-size: 2vh;
+
+    }
+    .nav-link {
+    width: 1fr;
+    padding: 1vh 2vh;
+    text-align: left;
+    margin: 0px;
+
+  }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  a:hover {
+
+  }
+  #logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  h1 {
+    font-size: var(--logo-font-size);
+    margin: auto;
+    font-family: garamond;
+    font-style: italic;
+  }
+  #header-img {
+    height: var(--header-height);
+    min-height: var(--header-min-height);
+  }
+  nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100%;
+    align-items: center;
+    grid-column-gap: 2px;
+    width 100%;
+  }
+  .nav-text {
+    padding: 2vh 4vh;
+    text-align: center;
+    margin: 0px;
+
+  }
+  .nav-link:hover {
+    transition: scale(1);
+    border: 1px solid var(--background-color);
+    border-radius: 0rem;
+    box-shadow: 1vh 1vh 2vh var(--text-color)
+  }
+  #home-a {
+
+  }
+  #about-a {
+
+  }
+  #locations-a {
+
+  }
+  #pricing-a {
+
+  }
+  .main {
+     padding-top: 5vh;
+  }
+  #top {
+    grid-area: top;
+
+  }
+  .email-form {
+   display: flex;
+    flex-direction: column;
+
+  }
+  [type='email'] {
+    background-color: var(--background-color);
+    border: 2px solid var(--text-color);
+    border-radius: .25rem;
+    margin: 1rem 0;
+    height: 1.75rem;
+  }
+  #submit {
+    background-color: var(--bar-color-1);
+    border: 2px solid var(--text-color);
+    border-radius: .25rem;
+    width: 95%;
+    align-self: center;
+  }
+  #submit:hover {
+    transform: scale(1.05)
+  }
+  #about {
+    grid-area: about;
+    background: transparent;
+    margin: auto;
+  }
+  #video {
+    min-width: 50vw;
+    min-height: 50vh;
+  }
+  #locations {
+    grid-area: locations;
+  }
+  #map {
+    min-width: 50vw;
+    min-height: 50vh;
+  }
+  #pricing {
+    grid-area: pricing;
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class="body">
+    <div class="top-banner">
+    <header id="header" class="header">
+      <a href="#top">
+      <div id="logo" class="header-bar">
+      <img
+          id="header-img"
+          src="https://www.pngitem.com/pimgs/m/651-6511081_dry-cleaning-dry-cleaners-logo-png-transparent-png.png"
+          alt="Long's Cleaners Logo">
+        <h1>Long's Cleaners</h1>
+        </div></a>
+      <nav id="nav-bar" class="header-bar">
+        <a href="#top" class="nav-link">
+          <p id="home-a" class="nav-text">Home</p></a>
+        <a href="#about" class="nav-link">
+        <p id="about-a" class="nav-text">About</p></a>
+        <a href="#locations" class="nav-link">
+        <p id="locations-a" class="nav-text">Locations</p></a>
+        <a href="#pricing" class="nav-link">
+        <p id="pricing-a" class="nav-text">Pricing</p></a>
+      </nav>
+      </header></div>
+    <main class="page">
+      <div class="main">
+        <section class="email" id="top">
+          <br><br> <br><br>
+          <form class="email-form" id="form" action="https://www.freecodecamp.com/email-submit">
+            <h2 class="email" id="email-form-label">Sign Up for Classic Clean Deals</h2>
+            <input name="email" type="email" placeholder="Your.email@example.com" class="field, email" id="email" required>
+            <input type="submit" class="email" id="submit" value="Sign Up">
+          </form>
+        </section>
+        </div>
+        <div class="main" id="about">
+          <section class="about" id="about-section">
+            <iframe width="100%" id="video" src="https://www.youtube.com/embed/kUVODp0dKpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </section>
+        </div>
+      <div class="main" id="locations">
+        <section class="locations" id="locations-section">
+          <div class="location" id="maple">
+            <h2>Maple Street - Sanitary</h2>
+            <p>This is our original location. This is where it all started and where it all happens. Feel free to drop in with any questions or catch the owner, Dan Long, to chat about local lore.</p>
+            <iframe id="map" alt="https://goo.gl/maps/H9KVA5wE9WVeLbNr9" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18599.978755869506!2d-83.66226116706504!3d41.37845673011935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x82fa16636b952957!2sSanitary%20(Long)%20Dry%20Cleaners!5e0!3m2!1sen!2sus!4v1624241160858!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="location" id="perrysberg">
+            <h2>Perrysberg</h2>
+            <p>We are always happy to take care of your clothes here in Perrysberg for your convenience. Please, stop in!</p>
+          </div>
+        </section>
+      </div>
+      <section id="pricing" class="main">
+        <h2>Pricing</h2>
+        <p>We do our very best to stay competitive! come give us a visit to talk shop!</p>
+
+
+      </section>
+
+    </main>
+
+  </div>
+
+  </body>
+</html>

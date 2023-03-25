@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Web Development Showcase</title>
+<link id='favicon' rel="icon" type="image/x-icon" href="../static/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="../static/styles.css" />
+</head>
+
+<body id="page">
+  <nav id="navbar" class="visible">
+
+      <a href="#welcome-section" id="about"><li>About</li></a>
+      <a href="#projects" id="work"><li>Work</li></a>
+      <a href="{{url_for('home')}}" id="contact-nav"><li>Home</li></a>
+
+
+  </nav>
+  <section id="welcome-section" class="visible">
+   <div id="top">
+     <h1 class="welcome-section">Web Development Showcase
+    </h1>
+    <p>This is where I keep the stuff I make</p>
+     <hr>
+     <div class="animbox">
+       <div class="anim">
+       </div>
+     </div>
+
+     </div>
+
+    </div>
+
+  </section>
+  <section class="visible" id="projects">
+    <h2>Projects</h2>
+    <div class="projects" id="progect-grid">        
+      <a
+         class="project-tile"
+         id="tribute-tile"
+         target="_self"
+         href="{{url_for('tributePage')}}">
+        <img
+             src="{{url_for('static', filename='handOfGod.png')}}"
+             alt="tribute image"
+             class="tile-image">
+        <p
+           class="tile-title">
+          <span
+              class="deco">&#9731
+          </span>
+          Tribute Page
+          <span class="deco">&#9752
+          </span>
+         </p>
+      </a>
+      <a
+         class="project-tile"
+         id="form-tile"
+         target="_self"
+         href="{{url_for('sillyForm')}}">
+        <img
+             src="{{url_for('static', filename='moonsun.png')}}"
+             alt="form image"
+             class="tile-image">
+        <p
+           class="tile-title">
+          <span
+              class="deco">&#9732
+          </span>
+          Form
+          <span class="deco">&#9728
+          </span>
+         </p>
+      </a>
+      <a
+         class="project-tile"
+         id="lander-tile"
+         target="_self"
+         href="{{url_for('lander')}}">
+        <img
+             src="{{url_for('static', filename='spiral.jpg')}}"
+             alt="lander image"
+             class="tile-image">
+        <p
+           class="tile-title">
+          <span
+              class="deco">&#9730
+          </span>
+          Lander
+          <span class="deco">&#9729
+          </span>
+         </p>
+      </a>
+      <a
+         class="project-tile"
+         id="technical-tile"
+         target="_self"
+         href="{{url_for('technicalPage')}}">
+        <img
+             src="{{url_for('static', filename='nursery.png')}}"
+             alt="technical image"
+             class="tile-image">
+        <p
+           class="tile-title">
+          <span
+              class="deco">&#9760
+          </span>
+          Technical Topic
+          <span class="deco">&#9763
+          </span>
+         </p>
+      </a>
+
+
+
+
+
+
+    </div>
+    <a href="https://www.freecodecamp.org/gandor" target="_blank" class="projects" id="profile-link">
+      <p>MORE &#9758</p>
+     </a>
+  </section>
+
+
+</body>
+</html>
